@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<%- include ./common/head.ejs %>
+<body>
+<%- include ./common/header.ejs %>
+<main class="wrapper col">
+    <h1>Hello EJS</h1>
+    <div class="masonry">
+        <% printArray.forEach(function(word)  {
+            const randColor = Math.floor(Math.random()*colorArray.length)
+            const randWidth = Math.floor(Math.random()*sizeArray.length)
+            const randHeight = Math.floor(Math.random()*sizeArray.length)
+        %>
+        <div class="item">
+            <img src="https://dummyimage.com/<%=sizeArray[randWidth]%>x<%=sizeArray[randHeight]%>/<%=colorArray[randColor]%>/fff.jpg&text=<%=word%>">
+        </div>
+        <% }) %>
+    </div>
+</main>
+<%- include ./common/footer.ejs %>
+</body>
+</html>

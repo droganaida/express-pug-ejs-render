@@ -1,0 +1,17 @@
+doctype html
+html(lang="en", dir="ltr")
+    include ./common/head
+    body
+        include ./common/header
+        main.wrapper.col
+            h1 Hello Pug
+            .masonry
+                each word in printArray
+                    - const randColor = Math.floor(Math.random()*colorArray.length)
+                    - const randWidth = Math.floor(Math.random()*sizeArray.length)
+                    - const randHeight = Math.floor(Math.random()*sizeArray.length)
+                    .item
+                        img(src='https://dummyimage.com/' + sizeArray[randWidth] + 'x' + sizeArray[randHeight] + '/' + colorArray[randColor] + '/fff.jpg&text=' + word)
+
+        include  ./common/footer
+

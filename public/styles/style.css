@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+/* ---------------- Common styles ------------------ */
+:root {
+    --main-bg-color: #e9e9e9;
+    --main-accent-color: #465362;
+    --text-color: #ffffff;
+    --item-bg-color: #ffffff;
+}
+body {
+    font: 1em/1.5 Arial, Sans-serif;
+    margin: 0;
+    background: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    font-size: 2em;
+    margin: 1em auto;
+    text-align: center;
+}
+header, footer, main, div {
+    box-sizing: border-box;
+}
+header, footer {
+    background: var(--main-accent-color);
+    padding: 1.5em;
+    color: var(--text-color);
+}
+footer {
+    text-align: center;
+}
+header a, footer a {
+    color: var(--text-color);
+    opacity: .5;
+    transition: .3s;
+}
+header a:hover, footer a:hover, header li.active a {
+    opacity: 1;
+    transition: .3s;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+header nav ul li {
+    margin: 0 1em 0 0;
+    line-height: 1.2;
+    padding: .5em;
+}
+main {
+    flex-grow: 1;
+}
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1.5em auto;
+}
+.item {
+    background-color: var(--item-bg-color);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.18);
+    padding: 1.5em;
+    margin: .5em .5em;
+}
+.wrapper .item > img {
+    margin: 0 auto;
+}
+/* ---------------- Masonry styles ------------------ */
+:root {
+    --column-count: 4;
+}
+/* Masonry container column-count */
+.wrapper.col .masonry {
+    column-count: var(--column-count);
+    column-gap: 1em;
+    padding: 0 .5em;
+}
+/* Masonry bricks column-count */
+.wrapper.col .item {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+/* ---------------- Mobile styles ------------------ */
+@media (max-width: 900px) {
+    :root {
+        --column-count: 3;
+    }
+}
+@media (max-width: 700px) {
+    :root {
+        --column-count: 2;
+    }
+}
+@media (max-width: 450px) {
+    :root {
+        --column-count: 1;
+    }
+}

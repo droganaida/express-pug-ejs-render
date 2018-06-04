@@ -1,0 +1,22 @@
+{
+  "name": "ejs-vs-jade",
+  "version": "1.0.0",
+  "description": "EJS and Jade (Pug) templates rendering",
+  "main": "app.js",
+  "author": {
+    "name": "Aida Drogan",
+    "email": "aida.drogan.box@gmail.com",
+    "url": "https://www.youtube.com/channel/UCSsg9NLCse2XQCIRgfmJu3Q"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development node app.js",
+    "pro": "NODE_ENV=production node app.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "2.6.1",
+    "express": "4.16.3",
+    "html-minifier": "3.5.16",
+    "pug": "2.0.3"
+  }
+}
